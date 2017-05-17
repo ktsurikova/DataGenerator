@@ -1,0 +1,59 @@
+<script src="https://code.jquiery.com/jquiery-2.2.0.min.js"></script>
+
+
+<div class="main-form">
+    <div class="info">
+        <div class="project-name">Random Data Generator</div>
+        <div class="project-desc">Test your software!</div>
+    </div>
+    <div *ngIf="showMessages" class="alert alert-danger">
+        <p *ngIf="checkEmptyTitles()"> {{emptyTitleMessage}} </p>
+        <p *ngIf="checkRepeatingTypes()"> {{repeatingTypeMessage}} </p>
+        <p *ngIf="checkRepeatingTitles()"> {{repeatingTitleMessage}} </p>
+    </div>
+    <div class="form-template" *ngFor="let rowIndex of rowsIndexesArray">
+        <input type="text" class="input-title" placeholder="title" name="title" (change)="setDataTitle($event.target.value,rowIndex)" />
+        <select class="input-type" (change)="setDataType($event.target.value,rowIndex);rowsArray[rowIndex].showRules($event.target.value)">
+            <option *ngFor="let types of types">{{types}}</option>
+        </select>
+
+        <select class="input-type" *ngIf="rowsArray[rowIndex].showRule" (change)="setDataRule($event.target.value,rowIndex)">
+            <option *ngFor="let rules of rowsArray[rowIndex].rules">{{rules}}</option>
+        </select>
+        <button *ngIf="showAddButton(rowIndex)" (click)="addRow()" class="Button button-operation"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+        <button *ngIf="showDeleteButton(rowIndex)" (click)="deleteRow()" class="Button button-operation"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+    </div>
+
+    <div class=form-template>
+        <label class="rowsNumber">Rows Number</label>
+        <input class="input-type" type="text" placeholder="100" (change)="setRowsNumber($event.target.value)" />
+    </div>
+
+
+    <div class=form-template>
+        <button (click)="doPreview()" class="addButton bth btn-default">See JSON</button>
+    </div>
+</div>
+
+
+
+<div (click)="show('none')" id="wrap"></div>  	<!-- Задний прозрачный фон-->
+<div id="window"> <!-- Само окно-->
+<img class="close" (click)="show('none')" src="http://sergey-oganesyan.ru/wp-content/uploads/2014/01/close.png"> <!-- Картинка крестика-->
+<table style="width:100%">
+ <tr>JSON</tr>
+  <tr>
+    <td>{{jsonToShow}}</td>
+  </tr>
+</table>
+
+
+
+
+<div class=window_footer> 
+     <button class="dowloadButton bth bth-default" id="container" ></button>
+</div>
+</div>
+
+
+  

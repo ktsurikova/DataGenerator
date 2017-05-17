@@ -1,0 +1,76 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Angular QuickStart</title>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+
+    <script src="systemjs.config.js"></script>
+    <script>
+        System.import('main.js').catch(function(err){ console.error(err); });
+    </script>
+</head>
+
+<body>
+<base href="/">
+<my-app>Loading AppComponent content here ...</my-app>
+</body>
+</html>
+
+
+@*<button id="generate">generate</button>
+
+@section scripts
+{
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            $("#generate").click(function(event) {
+                event.preventdefault();
+                generate();
+            });
+
+        });
+
+        // добавление новой книги
+        function generate() {
+            // получаем значения для добавляемой книги
+            var user = {
+                dataunits: [
+                    { title: "namen", type: "name", rule: "none" },
+                    { title: "surnames", type: "surname", rule: "none" },
+                    { title: "genderg", type: "gender", rule: "Female" },
+                    { title: "emaile", type: "email", rule: "none" },
+                    { title: "numbern", type: "number", rule: "Landline" },
+                    { title: "agea", type: "age", rule: "Any" }
+                    //{ title: "genderg", type: "gender", rule: "m" }
+                ],
+                numberofrows: 498
+            }
+            $.ajax({
+                url: '/api/values/',
+                type: 'post',
+                data: json.stringify(user),
+                contenttype: "application/json;charset=utf-8",
+                success: function(data) {
+                    for (var i = 0; i < data.length; i++) {
+                        console.log(data[i].properties);
+                    }
+                },
+                error: function(x, y, z) {
+                    alert(x + '\n' + y + '\n' + z);
+                }
+            });
+        }
+    </script>
+}*@
+
+

@@ -1,0 +1,160 @@
+h1 {
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+}
+.body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+input, select {
+    width: 130px;
+    height: auto;
+    margin-left: 20px;
+    margin-top: 15px;
+    box-sizing: border-box;
+}
+.info {
+    margin:10px;
+    margin-bottom:25px;
+}
+.input-title {
+    width:150px;
+    margin-left:180px;
+    border-radius:4px;
+    border:1px solid #ccc;
+    padding:5px;
+    font-size:16px;
+}
+.button-operation {
+    margin-left:10px;
+    border-radius:4px;
+    border:1px solid #ccc;
+    background-color:ghostwhite
+    padding:5px;
+}
+.input-type {
+    width:150px;
+    margin-left:30px;
+    border-radius:4px;
+    border:1px solid #ccc;
+    color:#555;
+    padding:6px;
+    font-size:16px;
+}
+.rowsNumber {
+    margin-left:180px;
+    font-size:20px;
+}
+.project-name {
+    text-align:center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding:15px;
+    padding-bottom:7px;
+    font-size:50px;
+}
+
+.project-desc {
+    text-align:right;
+    padding-right:170px;
+    font-size:30px;
+    font-style:italic;
+}
+
+.main-form {
+     margin-left:auto;
+    margin-right:auto;
+  position: relative;
+  border-radius: 6px;
+   width: 900px;
+  background-color: #B0E2FF; 
+}
+.form-template{
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:10px;
+  border-width: 5px;
+  float: center;
+  height: 60px;
+}
+
+.dowloadButton {
+    text-align:center;
+  border-radius:4px;
+    border:1px solid #ccc;
+    padding:5px;
+    font-size:18px;
+    padding-left:12px;
+    padding-right:12px;
+}
+
+.addButton{
+  margin-left:180px;
+  border-radius:4px;
+    border:1px solid #ccc;
+    padding:5px;
+    font-size:18px;
+    padding-left:12px;
+    padding-right:12px;
+}
+
+	
+	#wrap{
+		display: none;
+		opacity: 0.8;
+		position: fixed;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		padding: 16px;
+		background-color: rgba(1, 1, 1, 0.725);
+		z-index: 100;
+		overflow: auto;
+	}
+	
+	#window{
+		width: 600px;
+		height: 400px;
+		margin: 50px auto;
+		display: none;
+		background: #fff;
+		z-index: 200;
+		position: fixed;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		padding: 16px;
+	}
+	
+	.close{
+		margin-left: 364px;
+		margin-top: 4px;
+		cursor: pointer;
+    position: relative;
+    float: right;
+	}
+
+    .window_footer{
+        position: absolute;
+        bottom: 30px;
+        float: center;
+        width: 100%;
+    }
+
+     #A:hover { 
+     text-decoration: none; /* Ссылка подчеркнутая и надчеркнутая */
+     color: black;
+   }
+
+   #A{
+        text-decoration: none; /* Ссылка подчеркнутая и надчеркнутая */
+     color: black;
+   }
+
+   #headline{
+     font-style  : strong; 
+   }
+	
